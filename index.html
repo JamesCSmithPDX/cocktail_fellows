@@ -5,10 +5,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"
 </head>
 <body>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#"></a>
-    <a href="#"></a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand"  class="glyphicon glyphicon-glass">
+        </a>
+      </div>
+    </div>
   </nav>
   <div id="page1">
     <!-- Page 1 is a cover page -->
@@ -58,7 +62,7 @@
   <div id="page3">
     <!-- Page 3 gives you the results on how you answered the above questions  -->
 
-      <div class="modal" id="myModal">
+      <div class="modal fade" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="close">
@@ -146,14 +150,13 @@
   <script src="vendor/scripts/page.js"></script>
   <script src="scripts/route.js"></script>
   <script>
-  // $(document).ready(function() {
-  //   $('#myModal').modal('show');
-  //   window.setTimeout(show_modal, 2000);
-  // });
-  // images = function() {
-  //   $('#myCarousel').hide();
-  // };
-  // images();
+  images = function() {
+    $('.carousel-inner').on('click', function() {
+      $('#myModal').modal('show');
+      window.setTimeout('show_modal', 2000);
+     });
+  };
+  images();
   </script>
 
 
