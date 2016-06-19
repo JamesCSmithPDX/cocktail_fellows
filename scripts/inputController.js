@@ -39,24 +39,21 @@
   Drink.loadAll = function(data){
     data.drinks.forEach(function(drink){
       Drink.all.push(drink);
-      Drink.all.forEach(function(drink){
-        console.log(drink);
-        var newDrink = new Drink(drink);
-      });
+      // Drink.all.forEach(function(drink){
+      //   console.log(drink);
+      //   var newDrink = new Drink(drink);
+      // });
     });
   };
 
-  // Drink.getAll = function(next) {
-  //   if(localStorage.drinks){
-  //     Drinks.all
-  //   }
-  // };
+
 
 
 
   inputController.index = function() {};
 
   module.inputController = inputController;
+  module.Drink = Drink;
 })(window);
 
 
