@@ -2,16 +2,16 @@
   var inputController = {};
 
   var $timeofDay = null;
-  var $alcohoPreference = null;
+  var $alcoholPreference = null;
   var $skill = null;
   var $taste = null;
 
   inputController.storeSelection = function() {
     $('select').change(function() {
       $timeofDay = $('#time').val();
-      $timeofDay = $('#preference').val();
-      $timeofDay = $('#skill').val();
-      $timeofDay = $('#taste').val();
+      $alcoholPreference = $('#preference').val();
+      $skill = $('#skill').val();
+      $taste = $('#taste').val();
     });
   };
 
