@@ -44,6 +44,8 @@
       //   var newDrink = new Drink(drink);
       // });
     });
+    drinkView.showCarousel();
+
   };
 
 
