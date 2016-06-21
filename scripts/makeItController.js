@@ -8,14 +8,16 @@
   makeitController.measures = [];
   makeitController.glass = '';
 
-  $('#testbtn').click(function() {
+  // Function will take the id of the selected drink and call to the db again,
+  // Filters through the returned json object and sorts out the ingredient,
+  // instruction, measurement, and glass information.
+  makeitController.idInfoFetch = function(idDrink) {
 
-
-    makeitController.drinkPlaceHold = Drink.all[0];
+    //makeitController.drinkPlaceHold = Drink.all[0];
 
     $.ajax({
       // Ajax call using individual drink id.
-      url: '/drinks/' + 'lookup.php?i=' + makeitController.drinkPlaceHold.idDrink,
+      url: '/drinks/' + 'lookup.php?i=' + idDrink,
       success: function(data) {
         // Passed data will have the form of an object with a 'drinks' array with
         // another object inside.
@@ -29,7 +31,7 @@
       }
     });
 
-  });
+  };
 
   makeitController.infoFilter = function(object) {
     var instruct = '';
