@@ -20,7 +20,7 @@
   </script>
 
   <script id="modal-template" type="text/x-handlebars-template">
-    <h3>{{}}</h3>
+    <h3>{{strDrink}}</h3>
     <p>
       Ingrediants:<br />
       {{strIngredient1}}<br />
@@ -99,7 +99,7 @@
             <h2 class="modal-title">Recipe</h2>
           </div>
           <div class="modal-body">
-            <!-- <h3>{{}}</h3>
+            <!-- <h3>{{strDrink}}</h3>
             <p>
               Ingrediants:<br />
               {{strIngredient1}}<br />
@@ -195,26 +195,29 @@
   <script src="scripts/drinkView.js"></script>
   <script src="vendor/scripts/page.js"></script>
   <script src="scripts/route.js"></script>
-  <script>
-  images = function() {
+  <!-- <script>
+
+  var images = function() {
     $('.carousel-inner').on('click', function() {
       $('#myModal').modal('show');
-      window.setTimeout('show_modal', 2000);
-     });
+      // window.setTimeout('show_modal', 2000);
+    });
   };
-  images();
 
-  carousel = function() {
+  var carousel = function() {
     $('#myCarousel').hide();
     $('select').change(function() {
       $('#myCarousel').show();
       $('#page2').hide();
     });
-
   };
-  carousel();
 
-  </script>
+  carousel();
+  images();
+
+
+
+  </script> -->
 
 
 </body>
