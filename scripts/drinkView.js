@@ -5,6 +5,7 @@
   drinkView.showCarousel = function(){
     if(Drink.all.length){
       appendDrinks();
+      appendRecipe();
       console.log('inside showCarousel');
 
     } else {
@@ -13,6 +14,7 @@
         Drink.all.push(drink);
       });
       appendDrinks();
+      appendRecipe();
 
 
     };
@@ -25,6 +27,33 @@
       $('.carousel-inner').append(compiledTemplate);
     });
   };
+
+  var appendRecipe = function() {
+    Drink.all.forEach(function() {
+      var modalTemplate = $('#modal-template').html();
+      var compiledTemplate = Handlebars.compile(modalTemplate);
+      $('.modal-body').append(compiledTemplate);
+    });
+  };
+
+  var images = function() {
+    $('.carousel-inner').on('click', function() {
+      $('#myModal').modal('show');
+      // window.setTimeout('show_modal', 2000);
+    });
+  };
+  
+  var carousel = function() {
+    $('#myCarousel').hide();
+    $('select').change(function() {
+      $('#myCarousel').show();
+      $('#page2').hide();
+    });
+  };
+
+  carousel();
+  images();
+
 
 
   module.drinkView = drinkView;
