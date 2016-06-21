@@ -1,8 +1,6 @@
 (function(module) {
   var makeitController = {};
 
-  makeitController.drinkPlaceHold = '';
-
   makeitController.ingredients = [];
   makeitController.instructions = [];
   makeitController.measures = [];
@@ -23,10 +21,10 @@
         // another object inside.
         // Ex { "drinks": [{"idDrink":"14029"...}]}
         // 0 index grabs the object within the array, which is the data you want.
-        makeitController.drinkPlaceHold = data.drinks[0];
+
         //console.log('key name =', Object.keys(makeitController.drinkPlaceHold));
 
-        makeitController.infoFilter(makeitController.drinkPlaceHold);
+        makeitController.infoFilter(data.drinks[0]);
 
       }
     });
