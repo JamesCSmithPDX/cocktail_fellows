@@ -45,7 +45,6 @@
       // });
     });
     drinkView.showCarousel();
-
   };
 
 
