@@ -14,8 +14,13 @@
     makeitController.drinkPlaceHold = Drink.all[0];
 
     $.ajax({
+      // Ajax call using individual drink id.
       url: '/drinks/' + 'lookup.php?i=' + makeitController.drinkPlaceHold.idDrink,
       success: function(data) {
+        // Passed data will have the form of an object with a 'drinks' array with
+        // another object inside.
+        // Ex { "drinks": [{"idDrink":"14029"...}]}
+        // 0 index grabs the object within the array, which is the data you want.
         makeitController.drinkPlaceHold = data.drinks[0];
         //console.log('key name =', Object.keys(makeitController.drinkPlaceHold));
 
@@ -39,6 +44,9 @@
 
       } else if (prop.substring(0, 6) == 'strIns') {
         instruct = object[prop];
+
+      } else if (prop.substring(0, 6) == 'strGla' && object[prop].length > 1) {
+        makeitController.glass = object[prop];
       }
     }
 
