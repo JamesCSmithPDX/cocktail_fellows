@@ -5,7 +5,7 @@
 
   makeitController.ingredients = [];
   makeitController.instructions = [];
-  makeitController.measure = [];
+  makeitController.measures = [];
 
   $('#testbtn').click(function() {
 
@@ -18,7 +18,9 @@
         makeitController.drinkPlaceHold = data.drinks[0];
         //console.log('key name =', Object.keys(makeitController.drinkPlaceHold));
         makeitController.ingredientsFilter(makeitController.drinkPlaceHold);
+        makeitController.measureFilter(makeitController.drinkPlaceHold);
         makeitController.instructionsFilter(makeitController.drinkPlaceHold);
+
       }
     });
 
@@ -30,6 +32,14 @@
       if (prop.substring(0, 6) == 'strIng' && object[prop].length > 0) {
         //console.log(object[prop]);
         makeitController.ingredients.push(object[prop]);
+      }
+    }
+  };
+
+  makeitController.measureFilter = function(object) {
+    for (var prop in object) {
+      if (prop.substring(0, 6) == 'strMea' && object[prop].length > 1) {
+        makeitController.measures.push(object[prop]);
       }
     }
   };
