@@ -6,12 +6,16 @@
     if(Drink.all.length){
       console.log(Drink.all.length);
       appendDrinks();
+      console.log('inside showCarousel');
+
     } else {
       var locStoreArray = JSON.parse(localStorage.getItem ('drinks'));
       locStoreArray.forEach(function(drink){
         Drink.all.push(drink);
       });
       appendDrinks();
+
+
     };
   };
 
@@ -24,6 +28,7 @@
       $('.carousel-inner').append(compiledTemplate);
     });
   };
+
 
   module.drinkView = drinkView;
 })(window);
