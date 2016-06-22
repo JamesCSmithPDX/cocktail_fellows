@@ -55,8 +55,10 @@
   drinkView.showModal = function() {
     $('.carousel-inner').on('click', function(e) {
       console.log(e);
+      var idDrink = '';
+      $('.modal-body').empty();
       $('#myModal').modal('show');
-      var idDrink = $('.carousel-inner div img').attr('data-drinkid');
+      var idDrink = $('.carousel-inner div.active img').attr('data-drinkid');
       console.log(idDrink);
       appendRecipe(idDrink);
       console.log('showModal working');
