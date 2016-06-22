@@ -41,12 +41,14 @@
     });
   };
 
-  var appendRecipe = function() {
+  var appendRecipe = function(id) {
     Drink.all.forEach(function(ele) {
-      var modalTemplate = $('#modal-template').html();
-      var compiledTemplate = Handlebars.compile(modalTemplate);
-      var html = compiledTemplate(ele);
-      $('.modal-body').append(html);
+      if (ele.idDrink == id) {
+        var modalTemplate = $('#modal-template').html();
+        var compiledTemplate = Handlebars.compile(modalTemplate);
+        var html = compiledTemplate(ele);
+        $('.modal-body').append(html);
+      };
     });
   };
 
@@ -54,7 +56,9 @@
     $('.carousel-inner').on('click', function(e) {
       console.log(e);
       $('#myModal').modal('show');
-      var idDrink = $(this).attr('data-drinkID');
+      var idDrink = $('.carousel-inner div img').attr('data-drinkid');
+      console.log(idDrink);
+      appendRecipe(idDrink);
       console.log('showModal working');
     });
   };
