@@ -1,38 +1,61 @@
 (function(module) {
   var makeitController = {};
 
-  makeitController.drinkPlaceHold = '';
+  makeitController.ingredients = [];
+  makeitController.instructions = [];
+  makeitController.measures = [];
+  makeitController.glass = '';
 
-  $('#testbtn').click(function() {
-    var ingredients, instructions, measure;
+  // Function will take the id of the selected drink and call to the db again,
+  // Filters through the returned json object and sorts out the ingredient,
+  // instruction, measurement, and glass information.
+  makeitController.idInfoFetch = function(idDrink) {
 
-    makeitController.drinkPlaceHold = Drink.all[0];
+    //makeitController.drinkPlaceHold = Drink.all[0];
 
     $.ajax({
-      url: '/drinks/' + 'lookup.php?i=' + makeitController.drinkPlaceHold.idDrink,
+      // Ajax call using individual drink id.
+      url: '/drinks/' + 'lookup.php?i=' + idDrink,
       success: function(data) {
-        makeitController.drinkPlaceHold = data.drinks[0];
+        // Passed data will have the form of an object with a 'drinks' array with
+        // another object inside.
+        // Ex { "drinks": [{"idDrink":"14029"...}]}
+        // 0 index grabs the object within the array, which is the data you want.
+
         //console.log('key name =', Object.keys(makeitController.drinkPlaceHold));
-        makeitController.ingredientsFilter(makeitController.drinkPlaceHold);
+
+        makeitController.infoFilter(data.drinks[0]);
+
       }
     });
 
-  });
-
-  makeitController.ingredientsFilter = function(object) {
-    for (var prop in object) {
-      if (prop.substring(0, 6) == 'strIng' && object[prop].length > 0) {
-        console.log(object[prop]);
-      }
-    }
   };
 
-  // makeitController.ingredientsFilter = function(drink) {
-  //   var ingredients = [];
-  //   drink.forEach(function(key) {
-  //
-  //   });
-  // };
+  makeitController.infoFilter = function(object) {
+    var instruct = '';
+
+    for (var prop in object) {
+      if (prop.substring(0, 6) == 'strIng' && object[prop].length > 0) {
+        //console.log(object[prop]);
+        makeitController.ingredients.push(object[prop]);
+
+      } else if (prop.substring(0, 6) == 'strMea' && object[prop].length > 1) {
+        makeitController.measures.push(object[prop]);
+
+      } else if (prop.substring(0, 6) == 'strIns') {
+        instruct = object[prop];
+
+      } else if (prop.substring(0, 6) == 'strGla' && object[prop].length > 1) {
+        makeitController.glass = object[prop];
+      }
+    }
+
+    var re = /\d\./;
+
+    var arr = instruct.split(re);
+    arr.shift();
+    makeitController.instructions = arr;
+  };
 
 
   makeitController.index = function(){};
