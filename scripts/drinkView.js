@@ -23,6 +23,7 @@
       for(var prop in object) {
         if (object[prop] == 'idDrink' && )
       }
+      
       var carouselTemplate = $('#carousel-template').html();
       var compiledTemplate = Handlebars.compile(carouselTemplate);
       var html = compiledTemplate(ele);
