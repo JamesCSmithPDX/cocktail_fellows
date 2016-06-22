@@ -55,7 +55,9 @@
 
     var arr = instruct.split(re);
     arr.shift();
+    console.log(arr);
     makeitController.instructions = arr;
+
   };
 
 

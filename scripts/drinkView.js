@@ -32,6 +32,8 @@
   //     $('.carousel-inner').append(html);
   //   });
   // };
+
+  //add selected drinks to carousel
   var appendDrinks = function() {
     Drink.all.forEach(function (ele) {
       var carouselTemplate = $('#carousel-template').html();
@@ -41,6 +43,7 @@
     });
   };
 
+  //add chosen drink to modal
   var appendRecipe = function(id) {
     Drink.all.forEach(function(ele) {
       if (ele.idDrink == id) {
