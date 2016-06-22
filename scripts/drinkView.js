@@ -54,13 +54,13 @@
 
   drinkView.showModal = function() {
     $('.carousel-inner').on('click', function(e) {
-      console.log(e);
       var idDrink = '';
       $('.modal-body').empty();
       $('#myModal').modal('show');
       var idDrink = $('.carousel-inner div.active img').attr('data-drinkid');
       console.log(idDrink);
       appendRecipe(idDrink);
+      drinkView.loadMakeIt(idDrink);
       console.log('showModal working');
     });
   };
@@ -72,6 +72,17 @@
       $('#page2').hide();
     });
   };
+
+  drinkView.loadMakeIt = function(idDrink) {
+    $('.makeIt a').on('click', function(e) {
+      console.log('in makeit button event');
+      event.preventDefault();
+      console.log(e);
+      makeitController.idInfoFetch(idDrink);
+      drinkView.page4();
+    });
+  };
+
 
   drinkView.page1 = function() {
     $('#page1').show();
