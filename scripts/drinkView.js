@@ -19,14 +19,22 @@
     };
   };
 
-  var appendDrinks = function(id){
-    Drink.all.forEach(function(ele){
-      for(var prop in object) {
-        if (object[prop] == 'idDrink' && )
-      }
-      
+  // var appendDrinks = function(id){
+  //   Drink.all.forEach(function(ele){
+  //     for(var prop in object) {
+  //       if (object[prop] == 'idDrink' && )
+  //     }
+  //
+  //     var carouselTemplate = $('#carousel-template').html();
+  //     console.log(carouselTemplate);
+  //     var compiledTemplate = Handlebars.compile(carouselTemplate);
+  //     var html = compiledTemplate(ele);
+  //     $('.carousel-inner').append(html);
+  //   });
+  // };
+  var appendDrinks = function() {
+    Drink.all.forEach(function (ele) {
       var carouselTemplate = $('#carousel-template').html();
-      console.log(carouselTemplate);
       var compiledTemplate = Handlebars.compile(carouselTemplate);
       var html = compiledTemplate(ele);
       $('.carousel-inner').append(html);
