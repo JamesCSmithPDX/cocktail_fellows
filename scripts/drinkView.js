@@ -19,21 +19,6 @@
     };
   };
 
-  // var appendDrinks = function(id){
-  //   Drink.all.forEach(function(ele){
-  //     for(var prop in object) {
-  //       if (object[prop] == 'idDrink' && )
-  //     }
-  //
-  //     var carouselTemplate = $('#carousel-template').html();
-  //     console.log(carouselTemplate);
-  //     var compiledTemplate = Handlebars.compile(carouselTemplate);
-  //     var html = compiledTemplate(ele);
-  //     $('.carousel-inner').append(html);
-  //   });
-  // };
-
-  //add selected drinks to carousel
   var appendDrinks = function() {
     Drink.all.forEach(function (ele) {
       var carouselTemplate = $('#carousel-template').html();
@@ -98,9 +83,29 @@
     });
   };
 
+  drinkView.pagerClick = function() {
+    $('.jumbotron').hide();
+    $('.pager').on('click', function() {
+      $('.jumbotron').show();
+    });
+  };
+
+  drinkView.jumbotronClick = function() {
+    $('#preference').hide();
+    $('#drinktype').hide();
+    $('#liquor').hide();
+    $('.jumbotron').on('click', function() {
+      $('.jumbotron').hide();
+      $('#preference').show();
+      $('#drinktype').show();
+      $('#liquor').show();
+    });
+  };
+
 
   drinkView.page1 = function() {
     $('#page1').show();
+    $('#topNav').hide();
     $('#page2').hide();
     $('#page3').hide();
     $('#page4').hide();
@@ -108,6 +113,7 @@
   };
 
   drinkView.page2 = function() {
+    $('#topNav').show();
     $('#page1').hide();
     $('#page2').show();
     $('#page3').hide();
@@ -116,6 +122,7 @@
   };
 
   drinkView.page3 = function() {
+    $('#topNav').show();
     $('#page1').hide();
     $('#page2').hide();
     $('#page3').show();
@@ -124,6 +131,7 @@
   };
 
   drinkView.page4 = function() {
+    $('#topNav').show();
     $('#page1').hide();
     $('#page2').hide();
     $('#page3').hide();
@@ -132,6 +140,7 @@
   };
 
   drinkView.page5 = function() {
+    $('#topNav').show();
     $('#page1').hide();
     $('#page2').hide();
     $('#page3').hide();
@@ -147,6 +156,8 @@
 
   drinkView.carousel();
   drinkView.showModal();
+  drinkView.pagerClick();
+  drinkView.jumbotronClick();
   drinkView.page1();
   drinkView.page2();
   drinkView.page3();
