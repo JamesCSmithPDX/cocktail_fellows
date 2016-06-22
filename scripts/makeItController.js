@@ -10,13 +10,14 @@
   // Filters through the returned json object and sorts out the ingredient,
   // instruction, measurement, and glass information.
   makeitController.idInfoFetch = function(idDrink) {
-
+    console.log(idDrink);
     //makeitController.drinkPlaceHold = Drink.all[0];
 
     $.ajax({
       // Ajax call using individual drink id.
       url: '/drinks/' + 'lookup.php?i=' + idDrink,
       success: function(data) {
+        console.log(data);
         // Passed data will have the form of an object with a 'drinks' array with
         // another object inside.
         // Ex { "drinks": [{"idDrink":"14029"...}]}
