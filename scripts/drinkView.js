@@ -41,26 +41,38 @@
     });
   };
 
-  var appendRecipe = function(id) {
-    Drink.all.forEach(function(ele) {
-      if (ele.idDrink == id) {
-        var modalTemplate = $('#modal-template').html();
-        var compiledTemplate = Handlebars.compile(modalTemplate);
-        var html = compiledTemplate(ele);
-        $('.modal-body').append(html);
-      };
-    });
+  var appendRecipe = function(drinkObject) {
+    var modalTemplate = $('#modal-template').html();
+    var compiledTemplate = Handlebars.compile(modalTemplate);
+    var html = compiledTemplate(drinkObject);
+    $('.modal-body').append(html);
+    // Drink.all.forEach(function(ele) {
+    //   if (ele.idDrink == id) {
+    //     var modalTemplate = $('#modal-template').html();
+    //     var compiledTemplate = Handlebars.compile(modalTemplate);
+    //     var html = compiledTemplate(ele);
+    //     $('.modal-body').append(html);
+    //   };
+    // });
   };
 
   drinkView.showModal = function() {
     $('.carousel-inner').on('click', function(e) {
       var idDrink = '';
       $('.modal-body').empty();
-      $('#myModal').modal('show');
+      //$('#myModal').modal('show');
       var idDrink = $('.carousel-inner div.active img').attr('data-drinkid');
+      //console.log(idDrink);
+      $.ajax({
+        url: '/drinks/' + 'lookup.php?i=' + idDrink,
+        success: function(data) {
+          appendRecipe(data.drinks[0]);
+          $('#myModal').modal('show');
+        }
+      });
       console.log(idDrink);
-      appendRecipe(idDrink);
-      drinkView.loadMakeIt(idDrink);
+      //appendRecipe(idDrink);
+      //drinkView.loadMakeIt(idDrink);
       console.log('showModal working');
     });
   };
