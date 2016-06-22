@@ -25,7 +25,7 @@
       type: 'GET',
       url: '/drinks/' + queryType,
       success: function(data, message, xhr){
-        console.log(data);
+        console.log('pulled data = ', data);
         localStorage.setItem('drinks', JSON.stringify(data));
         Drink.loadAll(data);
       },
@@ -38,13 +38,16 @@
 
   Drink.loadAll = function(data){
     data.drinks.forEach(function(drink){
+      if (drink.strDrinkThumb == null) {
+        drink.strDrinkThumb = 'images/ronb.jpg';
+      }
       Drink.all.push(drink);
       // Drink.all.forEach(function(drink){
       //   console.log(drink);
       //   var newDrink = new Drink(drink);
       // });
     });
-    console.log(Drink.all);
+    console.log('Drink.all = ', Drink.all);
     drinkView.showCarousel();
   };
 
