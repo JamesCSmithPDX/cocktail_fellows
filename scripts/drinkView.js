@@ -4,6 +4,7 @@
 
   drinkView.showCarousel = function(){
     if(Drink.all.length){
+      console.log(Drink.all.length);
       appendDrinks();
       // appendRecipe();
       console.log('inside showCarousel');
@@ -25,6 +26,7 @@
       }
       
       var carouselTemplate = $('#carousel-template').html();
+      console.log(carouselTemplate);
       var compiledTemplate = Handlebars.compile(carouselTemplate);
       var html = compiledTemplate(ele);
       $('.carousel-inner').append(html);
