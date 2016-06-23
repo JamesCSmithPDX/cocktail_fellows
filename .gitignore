@@ -5,6 +5,8 @@ npm-debug.log
 # Local development
 *.env
 *.dev
+absApiToken.js
+
 .DS_Store
 
 # Docker

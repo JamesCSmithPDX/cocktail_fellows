@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.nav>li>a {
+ color: black;
+}
+
+.pager>li>a {
+  z-index: 10;
+  margin-top: 45%;
+  margin-right: 20%;
+}
+
+footer {
+  min-height: 3%;
+  float: right;
+  margin-right: 5%;
+  font-size: 1vw;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+#myCarousel {
+  margin-top: 7vw;
+  margin-bottom: 7vw;
+  width: 100%;
+  min-height: 30vw;
+ }
+
+.item img {
+  max-height: 30vw;
+}
+
+#page1 {
+  background-image: url("../images/glasses.jpg");
+  background-size: cover;
+  min-height: 100%;
+  z-index: -10;
+}
+
+.jumbotron {
+  min-width: 70%;
+  min-height: 50%;
+}
