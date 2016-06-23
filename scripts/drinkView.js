@@ -7,9 +7,7 @@
     if(Drink.all.length){
       console.log(Drink.all.length);
 
-      getTemplate('handlebarsCarousel', data, function(html) {
-        $('.carousel-inner').append(html);
-      });
+      getTemplate();
       // appendDrinks();
       // appendRecipe();
       console.log('inside showCarousel');
@@ -19,16 +17,16 @@
       locStoreArray.forEach(function(drink){
         Drink.all.push(drink);
       });
-      getTemplate();
+      getTemplate(drink);
       // appendDrinks();
       // appendRecipe();
     };
   };
   // var appendDrinks = function() {
   //   Drink.all.forEach(function (ele) {
-  //     var carouselTemplate = $('#carousel-template').html();
-  //     var compiledTemplate = Handlebars.compile(carouselTemplate);
-  //     var html = compiledTemplate(ele);
+      // var carouselTemplate = $('#carousel-template').html();
+      // var compiledTemplate = Handlebars.compile(carouselTemplate);
+      // var html = compiledTemplate(ele);
       // $('.carousel-inner').append(html);
   //   });
   // };

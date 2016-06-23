@@ -38,18 +38,19 @@
 
 //TODO: MAKE SURE THIS IS WORKING!!
 
-  getTemplate = function(name, data, callback) {
-    return $.ajax({
-      type:'GET',
-      url: './hbs/' + name + '.hbs',
-      success: function(text) {
-        var template = Handlebars.compile(text);
-        var html = template(data);
-        callback(html);
+  getTemplate = function(callback) {
+    $.ajax({
+      type: 'GET',
+      url: 'handlebarsCarousel.hbs',
+      success: function(data) {
+        console.log(data, 'data','inside carousel ajax');
+        // info = Drink.fetch();
+        source = data;
+        template = Handlebars.compile(source);
+        $('.carousel-inner').append(template);
       },
-      error: function(xhr, status, error) {
-        console.log('inside template ajax error');
-        console.log('ajax error', {xhr: xhr, status: status, error: error});
+      error: function(error) {
+        console.log(data, 'data');
       }
     });
   };
