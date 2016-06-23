@@ -1,11 +1,16 @@
 (function(module){
 
   drinkView = [];
+  drinkView.showPage3 = false;
 
   drinkView.showCarousel = function(){
     if(Drink.all.length){
       console.log(Drink.all.length);
-      appendDrinks();
+
+      getTemplate('handlebarsCarousel', data, function(html) {
+        $('.carousel-inner').append(html);
+      });
+      // appendDrinks();
       // appendRecipe();
       console.log('inside showCarousel');
 
@@ -14,19 +19,19 @@
       locStoreArray.forEach(function(drink){
         Drink.all.push(drink);
       });
-      appendDrinks();
+      getTemplate();
+      // appendDrinks();
       // appendRecipe();
     };
   };
-
-  var appendDrinks = function() {
-    Drink.all.forEach(function (ele) {
-      var carouselTemplate = $('#carousel-template').html();
-      var compiledTemplate = Handlebars.compile(carouselTemplate);
-      var html = compiledTemplate(ele);
-      $('.carousel-inner').append(html);
-    });
-  };
+  // var appendDrinks = function() {
+  //   Drink.all.forEach(function (ele) {
+  //     var carouselTemplate = $('#carousel-template').html();
+  //     var compiledTemplate = Handlebars.compile(carouselTemplate);
+  //     var html = compiledTemplate(ele);
+      // $('.carousel-inner').append(html);
+  //   });
+  // };
 
   var appendRecipe = function(drinkObject) {
     var modalTemplate = $('#modal-template').html();
@@ -66,9 +71,9 @@
   };
 
   drinkView.carousel = function() {
-    // $('#myCarousel').hide();
+    $('.liTwo, .liThree, .liFour').hide();
     $('select').change(function() {
-      $('#page3').show();
+      $('#page3, .liTwo, .liThree, .liFour').show();
       $('#page2').hide();
     });
   };
@@ -83,86 +88,60 @@
     });
   };
 
-  drinkView.pagerClick = function() {
+  drinkView.buttonClick = function() {
     $('.jumbotron').hide();
-    $('.pager').on('click', function() {
+    $('.myButton').on('click', function() {
       $('.jumbotron').show();
     });
   };
 
   drinkView.jumbotronClick = function() {
-    $('#preference').hide();
-    $('#drinktype').hide();
-    $('#liquor').hide();
+    $('#preference, #drinktype, #liquor').hide();
     $('.jumbotron').on('click', function() {
       $('.jumbotron').hide();
-      $('#preference').show();
-      $('#drinktype').show();
-      $('#liquor').show();
+      $('#preference, #drinktype, #liquor').show();
     });
   };
 
-
   drinkView.page1 = function() {
     $('#page1').show();
-    $('#topNav').hide();
-    $('#page2').hide();
-    $('#page3').hide();
-    $('#page4').hide();
-    $('#page5').hide();
+    $('#topNav, #page2, #page3, #page4, #page5').hide();
   };
 
   drinkView.page2 = function() {
     $('#topNav').show();
-    $('#page1').hide();
+    $('#page1, #page3, #page4, #page5').hide();
     $('#page2').show();
-    $('#page3').hide();
-    $('#page4').hide();
-    $('#page5').hide();
   };
 
   drinkView.page3 = function() {
     $('#topNav').show();
-    $('#page1').hide();
-    $('#page2').hide();
+    $('#page1, #page2, #page4, #page5').hide();
     $('#page3').show();
-    $('#page4').hide();
-    $('#page5').hide();
   };
 
   drinkView.page4 = function() {
     $('#topNav').show();
-    $('#page1').hide();
-    $('#page2').hide();
-    $('#page3').hide();
+    $('#page1, #page2, #page3, #page5').hide();
     $('#page4').show();
-    $('#page5').hide();
   };
 
   drinkView.page5 = function() {
     $('#topNav').show();
-    $('#page1').hide();
-    $('#page2').hide();
-    $('#page3').hide();
-    $('#page4').hide();
+    $('#page1, #page2, #page3, #page4').hide();
     $('#page5').show();
   };
 
 
-
-
-
-
-
   drinkView.carousel();
   drinkView.showModal();
-  drinkView.pagerClick();
+  drinkView.buttonClick();
   drinkView.jumbotronClick();
-  drinkView.page1();
-  drinkView.page2();
-  drinkView.page3();
-  drinkView.page4();
-  drinkView.page5();
+  // drinkView.page1();
+  // drinkView.page2();
+  // drinkView.page3();
+  // drinkView.page4();
+  // drinkView.page5();
 
 
 
