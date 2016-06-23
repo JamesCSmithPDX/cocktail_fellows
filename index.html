@@ -39,7 +39,12 @@
       {{strIngredient15}}<br />
     </p>
   </script>
-
+  <script id="makeit-template" type="text/x-handlebars-template">
+    <h3>{{name}}</h3>
+    <p>
+      Glass: {{glass}}
+    </p>
+</script>
 </head>
 <body>
   <nav id="topNav">
@@ -179,6 +184,9 @@
 
   <div id="page4">
     <h1> Page 4 </h1>
+    <div class="makeit-body">
+
+    </div>
 
     <!-- Page 4 is going to give you the recipe and a how-to video on the drink you selected
               on page 3 -->
@@ -186,8 +194,7 @@
   </div>
   <div id="page5">
     <h1> Page 5 </h1>
-
-    <!-- Page 5 is about the dev team -->
+        <!-- Page 5 is about the dev team -->
     |  The Team  |
     <!-- <img src="images/rikki.jpg"> -->
     <!-- <img src="images/james.jpg"> -->
@@ -208,6 +215,7 @@
   <script src="scripts/suggestionController.js"></script>
   <script src="scripts/makeitController.js"></script>
   <script src="scripts/drinkView.js"></script>
+  <script src="scripts/makeitView.js"></script>
   <script src="vendor/scripts/page.js"></script>
   <script src="scripts/route.js"></script>
 

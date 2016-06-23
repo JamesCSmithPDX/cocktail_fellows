@@ -33,6 +33,7 @@
     var compiledTemplate = Handlebars.compile(modalTemplate);
     var html = compiledTemplate(drinkObject);
     $('.modal-body').append(html);
+    drinkView.loadMakeIt(drinkObject);
     // Drink.all.forEach(function(ele) {
     //   if (ele.idDrink == id) {
     //     var modalTemplate = $('#modal-template').html();
@@ -73,12 +74,12 @@
     });
   };
 
-  drinkView.loadMakeIt = function(idDrink) {
+  drinkView.loadMakeIt = function(drinkObject) {
     $('.makeIt a').on('click', function(e) {
       console.log('in makeit button event');
       event.preventDefault();
       console.log(e);
-      makeitController.idInfoFetch(idDrink);
+      makeitController.idInfoFetch(drinkObject);
       drinkView.page4();
     });
   };
