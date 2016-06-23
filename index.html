@@ -10,6 +10,9 @@
   <script id="carousel-template" type="text/x-handlebars-template">
     <div class="item">
     <img data-drinkid="{{idDrink}}" src={{strDrinkThumb}} class="center-block img-responsive">
+    <figcaption class ="carousel-caption">
+      {{strDrink}}
+    </figcaption>
   </div>
   <!-- <div class="item">
     <img src={{strDrinkThumb}} class="center-block img-responsive">
@@ -19,9 +22,9 @@
   </script>
 
   <script id="modal-template" type="text/x-handlebars-template">
-    <h3>{{strDrink}}</h3>
+    <h2>{{strDrink}}</h2>
     <p>
-      Ingrediants:<br />
+      <h3>Ingrediants:</h3><br />
       {{strIngredient1}}<br />
       {{strIngredient2}}<br />
       {{strIngredient3}}<br />
@@ -70,7 +73,7 @@
   <div id="page2">
     <!-- Page 2 finds out what you like to find your signature cocktail -->
     <h1> Page 2 </h1>
-
+    <!-- Once clicked jumbotron will take you to your liquor preference -->
       <div class="jumbotron">
          <h1>Let us help you!</h1>
          <p>Need help finding your signature Cocktail for your next big event?!<br />
@@ -100,14 +103,13 @@
     <option value="search.php?s=highball"> Highball </option>
     <option value="search.php?s=liqueur"> Liqueur </option>
     <option value="search.php?s=coffee"> Coffee Based </option>
-
   </select>
   </div>
   <div id="page3">
     <h1> Page 3 </h1>
 
     <!-- Page 3 gives you the results on how you answered the above questions  -->
-
+    <!-- Once .carousel-inner clicked modal shows drink recipe's -->
       <div class="modal fade" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -196,8 +198,8 @@
     <h1> Page 5 </h1>
         <!-- Page 5 is about the dev team -->
     |  The Team  |
-    <!-- <img src="images/rikki.jpg"> -->
-    <!-- <img src="images/james.jpg"> -->
+    <img src="images/rikki.jpg">
+    <img src="images/james.jpg">
 
   </div>
 
