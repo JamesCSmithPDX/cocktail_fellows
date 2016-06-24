@@ -40,8 +40,6 @@
         }
       });
       console.log(idDrink);
-      appendRecipe(idDrink);
-      drinkView.loadMakeIt(idDrink);
       console.log('showModal working');
     });
   };

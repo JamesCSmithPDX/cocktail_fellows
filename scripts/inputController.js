@@ -36,7 +36,6 @@
     });
   };
 
-//TODO: MAKE SURE THIS IS WORKING!!
 
   Drink.getTemplate = function(templateName, data, callback) {
     $.ajax({
