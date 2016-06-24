@@ -13,15 +13,16 @@
   //
 
   makeitDrink.appendFinalDrink = function(template, object) {
-    console.log('in appendFinalDrink');
-    console.log(object);
+    //console.log('in appendFinalDrink');
+    //console.log(object);
     var objectTemplate = $(template).html();
-    console.log(objectTemplate);
+    //console.log(objectTemplate);
     var compiledTemplate = Handlebars.compile(objectTemplate);
-    console.log(compiledTemplate);
+    //console.log(compiledTemplate);
     var html = compiledTemplate(object);
-    console.log(html);
-    $('.makeit-body').append(html);
+    //console.log(html);
+    $('#drinkRecipe').empty();
+    $('#drinkRecipe').append(html);
   };
 
   module.makeitDrink = makeitDrink;

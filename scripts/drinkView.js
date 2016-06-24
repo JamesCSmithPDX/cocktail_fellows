@@ -44,11 +44,13 @@
     });
   };
 
-  var appendRecipe = function(drinkObject) {
-    Drink.getTemplate('../templates/handlebarsModal.hbs', drinkObject, function(html){
+  var appendRecipe = function(tmpDrinkObject) {
+    console.log('appendRecipe called with', tmpDrinkObject);
+    drinkView.drinkObject = tmpDrinkObject;
+    Drink.getTemplate('../templates/handlebarsModal.hbs', drinkView.drinkObject, function(html){
       $('.modal-body').append(html);
-      drinkView.loadMakeIt(drinkObject);
-      console.log(html);
+      //drinkView.loadMakeIt();
+      //console.log(html);
     });
   };
 
@@ -60,17 +62,19 @@
     });
   };
 
-  drinkView.loadMakeIt = function(drinkObject) {
-    var drinkString = 'how to make '+drinkObject.strDrink+' drink';
-    $('.makeIt a').on('click', function(e) {
-      console.log('in makeit button event');
-      e.preventDefault();
-      console.log(e);
-      makeitController.infoFilter(drinkObject);
-      drinkView.page4();
-      ytApi.ytApiCall(drinkString);
-    });
-  };
+  $('.makeIt a').on('click', function(e) {
+    var drinkString = 'how to make '+ drinkView.drinkObject.strDrink + ' drink';
+    //console.log('in makeit button event');
+    console.log('drinkString in makeIt', drinkString);
+    e.preventDefault();
+    //console.log(e);
+    makeitController.infoFilter(drinkView.drinkObject);
+    drinkView.page4();
+    ytApi.ytApiCall(drinkString);
+  });
+
+  // drinkView.loadMakeIt = function() {
+  // };
 
   drinkView.buttonClick = function() {
     $('.jumbotron').hide();
