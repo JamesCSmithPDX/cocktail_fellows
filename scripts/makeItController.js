@@ -46,17 +46,11 @@
       if (prop.substring(0, 6) == 'strIng' && object[prop].length > 0) {
         //console.log(object[prop]);
         makeitController.ingredients.push(object[prop]);
-        makeitController.ingredientsObj = makeitController.ingredients.reduce(function(o, v, i){
-          o[i] = v;
-          return o;
-        }, {});
+        makeitController.ingredientsObj = {'ingredients': makeitController.ingredients };
         console.log(makeitController.ingredientsObj);
       } else if (prop.substring(0, 6) == 'strMea' && object[prop].length > 1) {
         makeitController.measures.push(object[prop]);
-        makeitController.measuresObj = makeitController.measures.reduce(function(o, v, i){
-          o[i] = v;
-          return o;
-        }, {});
+        makeitController.measuresObj = {'measures': makeitController.measures};
         console.log(makeitController.measuresObj);
       } else if (prop.substring(0, 6) == 'strIns') {
         instruct = object[prop];

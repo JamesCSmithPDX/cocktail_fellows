@@ -52,18 +52,9 @@
 <script id="ingredient-template" type="text/x-handlebars-template">
   <h3>Ingredients</h3>
   <p>
-    {{0}}
-    {{1}}
-    {{2}}
-    {{3}}
-    {{4}}
-    {{5}}
-    {{6}}
-    {{7}}
-    {{8}}
-    {{9}}
-    {{10}}
-    {{11}}
+    {{#each ingredients}}
+    {{this}}
+    {{/each}}
   </p>
 </script>
 <script id="measurement-template" type="text/x-handlebars-template">
