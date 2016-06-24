@@ -12,10 +12,10 @@
   // });
   //
 
-  makeitDrink.appendFinalDrink = function(object) {
+  makeitDrink.appendFinalDrink = function(template, object) {
     console.log('in appendFinalDrink');
     console.log(object);
-    var objectTemplate = $('#makeit-template').html();
+    var objectTemplate = $(template).html();
     console.log(objectTemplate);
     var compiledTemplate = Handlebars.compile(objectTemplate);
     console.log(compiledTemplate);
