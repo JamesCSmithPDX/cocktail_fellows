@@ -61,12 +61,14 @@
   };
 
   drinkView.loadMakeIt = function(drinkObject) {
+    var drinkString = 'how to make '+drinkObject.strDrink+' drink';
     $('.makeIt a').on('click', function(e) {
       console.log('in makeit button event');
       e.preventDefault();
       console.log(e);
       makeitController.infoFilter(drinkObject);
       drinkView.page4();
+      ytApi.ytApiCall(drinkString);
     });
   };
 
