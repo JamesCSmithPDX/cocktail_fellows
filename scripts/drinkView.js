@@ -77,9 +77,9 @@
   drinkView.loadMakeIt = function(drinkObject) {
     $('.makeIt a').on('click', function(e) {
       console.log('in makeit button event');
-      event.preventDefault();
+      e.preventDefault();
       console.log(e);
-      makeitController.idInfoFetch(drinkObject);
+      makeitController.infoFilter(drinkObject);
       drinkView.page4();
     });
   };
