@@ -1,12 +1,11 @@
 .name {
-  text-align: center;
   font-size: 6vw;
-  margin-top: 5%;
   margin-left: 4%;
+  padding-top: 1%;
   font-family: 'Lobster', cursive;
   z-index: 10;
-  position: absolute;
   color: white;
+  position: relative;
 }
 
 .modal-body {

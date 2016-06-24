@@ -36,6 +36,23 @@
     });
   };
 
+//TODO: MAKE SURE THIS IS WORKING!!
+
+  Drink.getTemplate = function(templateName, data, callback) {
+    $.ajax({
+      type: 'GET',
+      url: templateName,
+      success: function(source) {
+        var template = Handlebars.compile(source);
+        var html = template(data);
+        callback(html);
+      },
+      error: function(error) {
+        console.log(data, 'data');
+      }
+    });
+  };
+
   Drink.loadAll = function(data){
     data.drinks.forEach(function(drink){
       if (drink.strDrinkThumb == null) {
