@@ -7,10 +7,10 @@
     if(Drink.all.length){
       console.log(Drink.all.length);
 
-      getTemplate();
-      // appendDrinks();
-      // appendRecipe();
-      console.log(Drink.all ,'inside showCarousel');
+      Drink.getTemplate('/templates/handlebarsCarousel.hbs', {drinks: Drink.all}, function(html){
+        $('.carousel-inner').append(html);
+      });
+      console.log({drinks: Drink.all} ,'inside showCarousel');
 
     } else {
       var locStoreArray = JSON.parse(localStorage.getItem ('drinks'));
@@ -18,54 +18,38 @@
         Drink.all.push(drink);
         console.log(drink, 'drink');
       });
-      getTemplate();
-      // appendDrinks();
-      // appendRecipe();
+      Drink.getTemplate('/templates/handlebarsCarousel.hbs', {drinks: Drink.all}, function(html){
+        $('.carousel-inner').append(html);
+      });
     };
   };
-  // var appendDrinks = function() {
-    // Drink.all.forEach(function (ele) {
-      // var carouselTemplate = $('#carousel-template').html();
-      // var compiledTemplate = Handlebars.compile(carouselTemplate);
-      // var html = compiledTemplate(ele);
-      // $('.carousel-inner').append(html);
-  //   });
-  // };
 
-  var appendRecipe = function(drinkObject) {
-    var modalTemplate = $('#modal-template').html();
-    var compiledTemplate = Handlebars.compile(modalTemplate);
-    var html = compiledTemplate(drinkObject);
-    $('.modal-body').append(html);
-    // Drink.all.forEach(function(ele) {
-    //   if (ele.idDrink == id) {
-    //     var modalTemplate = $('#modal-template').html();
-    //     var compiledTemplate = Handlebars.compile(modalTemplate);
-    //     var html = compiledTemplate(ele);
-    //     $('.modal-body').append(html);
-    //   };
-    // });
-  //add chosen drink to modal
-  };
 
   drinkView.showModal = function() {
     $('.carousel-inner').on('click', function(e) {
       var idDrink = '';
       $('.modal-body').empty();
-      //$('#myModal').modal('show');
       var idDrink = $('.carousel-inner div.active img').attr('data-drinkid');
-      //console.log(idDrink);
+      console.log(idDrink);
       $.ajax({
         url: '/drinks/' + 'lookup.php?i=' + idDrink,
         success: function(data) {
-          appendRecipe(data.drinks[0]);
+          console.log('inside showModal ajax');
           $('#myModal').modal('show');
+          appendRecipe(data.drinks[0]);
         }
       });
       console.log(idDrink);
-      //appendRecipe(idDrink);
-      //drinkView.loadMakeIt(idDrink);
+      appendRecipe(idDrink);
+      drinkView.loadMakeIt(idDrink);
       console.log('showModal working');
+    });
+  };
+
+  var appendRecipe = function(drinkObject) {
+    Drink.getTemplate('../templates/handlebarsModal.hbs', drinkObject, function(html){
+      $('.modal-body').append(html);
+      console.log(html);
     });
   };
 

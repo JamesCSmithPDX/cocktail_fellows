@@ -38,16 +38,14 @@
 
 //TODO: MAKE SURE THIS IS WORKING!!
 
-  getTemplate = function(callback) {
+  Drink.getTemplate = function(templateName, data, callback) {
     $.ajax({
       type: 'GET',
-      url: 'handlebarsCarousel.hbs',
-      success: function(data) {
-        console.log(data, 'data','inside carousel ajax');
-        // info = Drink.fetch();
-        source = data;
-        template = Handlebars.compile(source);
-        $('.carousel-inner').append(template);
+      url: templateName,
+      success: function(source) {
+        var template = Handlebars.compile(source);
+        var html = template(data);
+        callback(html);
       },
       error: function(error) {
         console.log(data, 'data');
