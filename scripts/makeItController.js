@@ -71,19 +71,20 @@
       arr.shift();
       console.log(arr);
       makeitController.instructions = arr;
-      makeitController.ingredientsObj = makeitController.instructions.reduce(function(o, v, i){
+      makeitController.instructionsObj = makeitController.instructions.reduce(function(o, v, i){
         o[i] = v;
         return o;
       }, {});
-      console.log(makeitController.ingredientsObj);
+      console.log(makeitController.instructionsObj);
     } else {
-      makeitController.instructions = instruct;
-      var ourDrink = new FinalDrink(name, makeitController.glass, makeitController.instructions);
+      var ourDrink = new FinalDrink(name, makeitController.glass, instruct);
       console.log(ourDrink);
     }
     makeitController.ourDrink = new FinalDrink(name, makeitController.glass);
-    makeitDrink.appendFinalDrink(makeitController.ourDrink);
-
+    makeitDrink.appendFinalDrink('#makeit-template', makeitController.ourDrink);
+    makeitDrink.appendFinalDrink('#ingredient-template', makeitController.ingredientsObj);
+    makeitDrink.appendFinalDrink('#measurement-template', makeitController.measuresObj);
+    makeitDrink.appendFinalDrink('#instructions-template', makeitController.instructionsObj);
   };
 
 
