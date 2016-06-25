@@ -2,7 +2,7 @@
 
   var ytApi = {};
 
-  ytApi.tempRender = function(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res};
+  ytApi.tempRender = function(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r];});}return res;};
 
   ytApi.ytApiCall = function(inputstring) {
     var request = gapi.client.youtube.search.list({
