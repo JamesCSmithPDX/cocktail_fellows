@@ -127,6 +127,45 @@ footer {
 }
 
 @media (min-width: 800px) {
+
+  /*Page 2*/
+  #page2jumbotron {
+    padding-left: 5%;
+    background-color: #b3ccff
+  }
+
+  #dropdownMenus {
+    width: 100vw;
+    height: 80vh;
+    text-align: middle;
+    border-top: black solid 2px;
+    border-bottom: black solid 2px;
+    background-color: #b3ccff;
+    padding: 3% 10%;
+  }
+
+  #liquorChoice {
+    display: block;
+    text-align: center;
+    margin: 2% auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .dropdown {
+    height: 100px;
+    width: 47%;
+    font-size: 5vh;
+    text-indent: 5%;
+    background-color: beige;
+  }
+
+  .selectOption {
+
+  }
+
+
+  /*Page 4*/
   .youtubeFrame {
     width: 40vw;
     height: 50vh;

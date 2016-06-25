@@ -84,10 +84,10 @@
    };
 
    drinkView.jumbotronClick = function() {
-     $('#preference, #drinktype, #liquor').hide();
+     $('#preference, #drinktype, #liquor, #dropdownMenus').hide();
      $('.jumbotron').on('click', function() {
        $('.jumbotron').hide();
-       $('#preference, #drinktype, #liquor').show();
+       $('#preference, #drinktype, #liquor, #dropdownMenus').show();
      });
    };
 
