@@ -76,7 +76,7 @@
   };
 
 
-  makeitController.index = function(){};
+  //makeitController.index = function(){};
 
   module.makeitController = makeitController;
 })(window);
