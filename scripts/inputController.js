@@ -26,7 +26,7 @@
       url: '/drinks/' + queryType,
       success: function(data, message, xhr){
         console.log('pulled data = ', data);
-        localStorage.setItem('drinks', JSON.stringify(data));
+        // localStorage.setItem('drinks', JSON.stringify(data));
         Drink.loadAll(data);
       },
       error: function(xhr, status, error){
