@@ -1,4 +1,4 @@
-(function(module){
+ (function(module){
 
   drinkView = [];
   drinkView.showPage3 = false;
