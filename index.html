@@ -14,20 +14,21 @@
     </p>
 </script>
 <script id="ingredient-template" type="text/x-handlebars-template">
-  <h3>Ingredients</h3>
-  <p>
+  <h4>Ingredients</h4>
     {{#each ingredients}}
-    {{this}}
+    <li>
+    {{this}}:
+    </li>
     {{/each}}
-  </p>
 </script>
 <script id="measurement-template" type="text/x-handlebars-template">
-  <h3>Measurements</h3>
-  <p>
+  <h4>Measurements</h4>
     {{#each measures}}
+    <li>
     {{this}}
+    </li>
     {{/each}}
-  </p>
+
 </script>
 <script id="instructions-template" type="text/x-handlebars-template">
   <h3>Instructions</h3>
@@ -171,16 +172,32 @@
       </div>
 
   <div id="page4">
-    <h1> Page 4 </h1>
-    <div class="makeit-body">
-      <div id="youtubeResults"></div>
-      <div id="drinkRecipe"></div>
-    </div>
-
+  <div class="container">
     <!-- Page 4 is going to give you the recipe and a how-to video on the drink you selected
               on page 3 -->
+    <h1> Page 4 </h1>
+    <div class="row">
+    <div class="col-xs-12"><h2>Make Your Drink</h2>
+      <div class= "col-xs-6" id="youtubeResults"></div>
+      <div class="col-xs-6">
+          <div id="drinkRecipe">
+          </div>
+            <div class="row">
+            <div class="col-xs-3">
+                <div id="ingredients"></div>
+              </div>
+              <div class="col-xs-3">
+                <div id="measures"></div>
+              </div>
+            </div>
+            <div id="drinkInstruc">
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="page5">
+</div>
+<div id="page5">
     <div id="page5Background">
       <p>
         |  The Team  |
@@ -198,7 +215,6 @@
     &copy; 2016 Rikki Hansen | James Smith | Sean Loughran
     </div>
   </footer>
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>

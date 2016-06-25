@@ -69,10 +69,10 @@
       makeitController.instructionsObj = {'instructions': [instruct]};
     };
     makeitController.ourDrink = new FinalDrink(name, makeitController.glass);
-    makeitDrink.appendFinalDrink('#makeit-template', makeitController.ourDrink);
-    makeitDrink.appendFinalDrink('#ingredient-template', makeitController.ingredientsObj);
-    makeitDrink.appendFinalDrink('#measurement-template', makeitController.measuresObj);
-    makeitDrink.appendFinalDrink('#instructions-template', makeitController.instructionsObj);
+    makeitDrink.appendFinalDrink('#makeit-template', makeitController.ourDrink, '#drinkRecipe');
+    makeitDrink.appendFinalDrink('#ingredient-template', makeitController.ingredientsObj, '#ingredients');
+    makeitDrink.appendFinalDrink('#measurement-template', makeitController.measuresObj, '#measures');
+    makeitDrink.appendFinalDrink('#instructions-template', makeitController.instructionsObj, '#drinkInstruc');
   };
 
 

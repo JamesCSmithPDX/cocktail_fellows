@@ -12,7 +12,7 @@
   // });
   //
 
-  makeitDrink.appendFinalDrink = function(template, object) {
+  makeitDrink.appendFinalDrink = function(template, object, attr) {
     //console.log('in appendFinalDrink');
     //console.log(object);
     var objectTemplate = $(template).html();
@@ -21,8 +21,7 @@
     //console.log(compiledTemplate);
     var html = compiledTemplate(object);
     //console.log(html);
-    $('#drinkRecipe').empty();
-    $('#drinkRecipe').append(html);
+    $(attr).append(html);
   };
 
   module.makeitDrink = makeitDrink;
