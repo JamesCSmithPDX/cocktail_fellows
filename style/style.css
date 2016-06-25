@@ -121,3 +121,18 @@ footer {
 #page4 {
   height: 100%;
 }
+
+@media (min-width: 500px) {
+
+}
+
+@media (min-width: 800px) {
+  .youtubeFrame {
+    width: 40vw;
+    height: 50vh;
+  }
+  .youtubeTitle {
+    display: inline-block;
+    width: 40vw;
+  }
+}
