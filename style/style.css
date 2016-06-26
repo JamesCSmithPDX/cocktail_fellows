@@ -130,9 +130,9 @@ footer {
 
 }
 
-#page4 {
+/*#page4 {
   height: 100%;
-}
+}*/
 
 @media (max-width: 500px) {
   .carousel-inner {
@@ -189,5 +189,7 @@ footer {
   .youtubeTitle {
     display: block;
     width: 40vw;
+    margin: 0 auto;
   }
 }
+x`
