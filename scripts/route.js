@@ -5,7 +5,16 @@ page('/page3', drinkView.page3);
 page('/page4', drinkView.page4);
 page('/page5', drinkView.page5);
 
-// page(''); //Probably route for the about the team page.
+$('#home').click(function(){
+  location.reload();
+});
 
+$('#home').mouseover(function(){
+  $('#warningMessage').fadeIn();
+});
+
+$('#home').mouseout(function() {
+  $('#warningMessage').fadeOut();
+});
 
 page();
