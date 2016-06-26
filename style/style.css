@@ -153,7 +153,7 @@ footer {
   /*Page 2*/
   #page2jumbotron {
     padding-left: 5%;
-    background-color: #b3ccff
+    background-color: #dedede;
   }
 
   #dropdownMenus {
@@ -162,7 +162,7 @@ footer {
     text-align: middle;
     border-top: black solid 2px;
     border-bottom: black solid 2px;
-    background-color: #b3ccff;
+    background-color: #dedede;
     padding: 3% 10%;
   }
 
