@@ -14,3 +14,10 @@
   font-family: inherit;
   font-stretch: normal;
 }
+
+.page5 {
+  font-size: 2vw;
+  font-family: monospace;
+  text-align: center;
+  padding-top: 4%;
+}
