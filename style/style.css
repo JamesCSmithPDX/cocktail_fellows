@@ -107,6 +107,7 @@ footer {
   font-family: 'Lobster', cursive;
 
 }
+
 #page5 img {
   width: 300px;
 	height: 300px;
@@ -117,11 +118,16 @@ footer {
 	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  margin-left: 9%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
-#teamImages img {
-  margin-left: 9%;
-  margin-top: 4.5%
+#page5 img:hover {
+  opacity: 0.5;
+  transform: scale(1.2);
+  transition: 0.5s ease;
+
 }
 
 #page4 {
