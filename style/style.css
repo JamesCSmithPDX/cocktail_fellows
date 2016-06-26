@@ -5,12 +5,15 @@ html, body {
   height: 100%;
   width: 100%;
 }
+#warningMessage {
+  position: absolute;
+}
 
 #topNav li a {
   color: black;
-  font-size: 2vw;
+  font-size: 2.7vw;
   text-decoration: none;
-  font-family: 'Montserrat',Tenor Sans, sans-serif;
+  font-family: 'Lobster',Tenor Sans, sans-serif;
   padding-left: 4%;
   margin-top: 2%;
   display: inline-block;
@@ -18,7 +21,7 @@ html, body {
 }
 
 #topNav a:hover {
-
+  transform: scale(1.2);
 }
 
 #topNav li {
@@ -167,7 +170,7 @@ footer {
   width: 47%;
   font-size: 5vh;
   text-indent: 5%;
-  background-color: beige;
+  background-color: #EDEDED;
 }
 
 .selectOption {
@@ -180,6 +183,10 @@ footer {
   margin-bottom: 7vw;
   width: 100%;
   min-height: 30vw;
+ }
+
+ #page2 {
+   background-color: #dedede;
  }
 
  .carousel-caption {
@@ -204,16 +211,23 @@ footer {
 }
 
 /* PAGE4 */
-
+/*
 #page4 {
   height: 100%;
-}
+}*/
 
 .row {
   background-color: #dedede;
   font-size: 1.2vw;
   text-align: center;
   padding-bottom: 10%;
+  border: solid black;
+  margin: 0 auto;
+}
+
+#drinkInstruc {
+  border: solid black;
+  margin-top: 2%;
 }
 
 .title {
@@ -221,18 +235,14 @@ footer {
   font-family: 'Lobster', cursive;
   padding-top: 5%;
   padding-bottom: 4%;
+  text-decoration: underline;
 }
 
 #youtubeTitle {
   padding-top: 4%;
 }
 
-
 /* PAGE5 */
-
-#makeRow {
-  padding-left: 3%;
-}
 
 #page5Background {
   background: url("../images/bannerpage5.jpg") no-repeat center center fixed;
