@@ -10,7 +10,7 @@
       type: 'video',
       q: encodeURIComponent(inputstring).replace(/%20/g, '+'),
       maxResults: 3,
-      order: 'viewCount',
+      order: 'relevance',
     });
     request.execute(function(response) {
       var results = response.result;
