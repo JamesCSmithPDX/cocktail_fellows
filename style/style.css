@@ -9,6 +9,12 @@ html, body {
  color: black;
 }
 
+#warningMessage {
+  position: absolute;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
 footer {
   min-height: 3%;
   margin-right: 5%;
@@ -171,9 +177,10 @@ footer {
   .dropdown {
     height: 100px;
     width: 47%;
-    font-size: 5vh;
+    font-size: 2vw;
     text-indent: 5%;
-    background-color: beige;
+    background-color: #e6f3ff;
+    font-family: Verdana, sans-serif;
   }
 
   .selectOption {
@@ -182,6 +189,10 @@ footer {
 
 
   /*Page 4*/
+  #youtubeResults {
+    text-align: center;
+  }
+
   .youtubeFrame {
     width: 40vw;
     height: 50vh;
@@ -189,5 +200,6 @@ footer {
   .youtubeTitle {
     display: block;
     width: 40vw;
+    text-align: center;
   }
 }

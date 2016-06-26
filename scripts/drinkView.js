@@ -93,25 +93,25 @@
 
    drinkView.page2 = function() {
      $('#topNav').show();
-     $('#page1, #page3, #page4, #page5').hide();
+     $('#page1, #page3, #page4, #page5, #warningMessage').hide();
      $('#page2').show();
    };
 
    drinkView.page3 = function() {
      $('#topNav').show();
-     $('#page1, #page2, #page4, #page5').hide();
+     $('#page1, #page2, #page4, #page5, #warningMessage').hide();
      $('#page3').show();
    };
 
    drinkView.page4 = function() {
      $('#topNav').show();
-     $('#page1, #page2, #page3, #page5').hide();
+     $('#page1, #page2, #page3, #page5, #warningMessage').hide();
      $('#page4').show();
    };
 
    drinkView.page5 = function() {
      $('#topNav').show();
-     $('#page1, #page2, #page3, #page4').hide();
+     $('#page1, #page2, #page3, #page4, #warningMessage').hide();
      $('#page5').show();
    };
 
