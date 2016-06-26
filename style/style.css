@@ -201,5 +201,6 @@ footer {
     display: block;
     width: 40vw;
     text-align: center;
+    margin: 0 auto;
   }
 }
