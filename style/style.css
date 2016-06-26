@@ -62,6 +62,39 @@ footer {
   min-height: 50%;
 }
 
+/*Page 2*/
+#page2jumbotron {
+  padding-left: 5%;
+  background-color: #dedede;
+}
+
+#dropdownMenus {
+  width: 100vw;
+  height: 80vh;
+  text-align: middle;
+  border-top: black solid 2px;
+  border-bottom: black solid 2px;
+  background-color: #dedede;
+  padding: 3% 10%;
+}
+
+#liquorChoice {
+  display: block;
+  text-align: center;
+  margin: 2% auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.dropdown {
+  height: 100px;
+  width: 47%;
+  font-size: 2vw;
+  text-indent: 5%;
+  background-color: #e6f3ff;
+  font-family: Verdana, sans-serif;
+}
+
 .myButton {
 	-moz-box-shadow: 0px 1px 0px 0px #91b8b3;
 	-webkit-box-shadow: 0px 1px 0px 0px #91b8b3;
@@ -100,6 +133,10 @@ footer {
 	background:linear-gradient(to bottom, #f7ffff 5%, #ffffff 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7ffff', endColorstr='#ffffff',GradientType=0);
 	background-color:#f7ffff;
+}
+
+#makeRow {
+  padding-left: 3%;
 }
 
 #page5Background {
@@ -145,48 +182,9 @@ footer {
     width:100%;
     max-height: 200px !important;
   }
-
 }
 
 @media (min-width: 800px) {
-
-  /*Page 2*/
-  #page2jumbotron {
-    padding-left: 5%;
-    background-color: #dedede;
-  }
-
-  #dropdownMenus {
-    width: 100vw;
-    height: 80vh;
-    text-align: middle;
-    border-top: black solid 2px;
-    border-bottom: black solid 2px;
-    background-color: #dedede;
-    padding: 3% 10%;
-  }
-
-  #liquorChoice {
-    display: block;
-    text-align: center;
-    margin: 2% auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
-  }
-
-  .dropdown {
-    height: 100px;
-    width: 47%;
-    font-size: 2vw;
-    text-indent: 5%;
-    background-color: #e6f3ff;
-    font-family: Verdana, sans-serif;
-  }
-
-  .selectOption {
-
-  }
-
 
   /*Page 4*/
   #youtubeResults {
