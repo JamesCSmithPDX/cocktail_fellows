@@ -26,7 +26,7 @@
       url: '/drinks/' + queryType,
       success: function(data, message, xhr){
         console.log('pulled data = ', data);
-        // localStorage.setItem('drinks', JSON.stringify(data));
+        localStorage.setItem('drinks', JSON.stringify(data));
         Drink.loadAll(data);
       },
       error: function(xhr, status, error){
@@ -58,27 +58,13 @@
         drink.strDrinkThumb = 'images/ronb.jpg';
       }
       Drink.all.push(drink);
-      // Drink.all.forEach(function(drink){
-      //   console.log(drink);
-      //   var newDrink = new Drink(drink);
-      // });
     });
     console.log('Drink.all = ', Drink.all);
     drinkView.showCarousel();
   };
-
-
-
-
 
   inputController.index = function() {};
 
   module.inputController = inputController;
   module.Drink = Drink;
 })(window);
-
-
-//setup Drink.all array
-
-
-//ask the server to make the ajax call

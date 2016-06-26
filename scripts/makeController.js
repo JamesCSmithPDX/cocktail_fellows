@@ -12,32 +12,6 @@
   makeitController.measures = [];
   makeitController.glass = '';
 
-  // Function will take the id of the selected drink and call to the db again,
-  // Filters through the returned json object and sorts out the ingredient,
-  // instruction, measurement, and glass information.
-  // makeitController.idInfoFetch = function(drinkObject) {
-  //   console.log('drinkObject:' + drinkObject);
-  //   //makeitController.drinkPlaceHold = Drink.all[0];
-  //
-  //   // $.ajax({
-  //   //   // Ajax call using individual drink id.
-  //   //   url: '/drinks/' + 'lookup.php?i=' + idDrink,
-  //   //   success: function(data) {
-  //   //     console.log(data);
-  //       // Passed data will have the form of an object with a 'drinks' array with
-  //       // another object inside.
-  //       // Ex { "drinks": [{"idDrink":"14029"...}]}
-  //       // 0 index grabs the object within the array, which is the data you want.
-  //
-  //       //console.log('key name =', Object.keys(makeitController.drinkPlaceHold));
-  //
-  //   makeitController.infoFilter(drinkObject);
-  //
-  //     // }
-  //   // });
-  //
-  // };
-
   makeitController.infoFilter = function(object) {
     console.log('in makeitController.infoFilter');
     var instruct = '';
@@ -75,8 +49,6 @@
     makeitDrink.appendFinalDrink('#instructions-template', makeitController.instructionsObj, '#drinkInstruc');
   };
 
-
-  //makeitController.index = function(){};
 
   module.makeitController = makeitController;
 })(window);

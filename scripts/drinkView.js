@@ -49,8 +49,6 @@
      drinkView.drinkObject = tmpDrinkObject;
      Drink.getTemplate('../templates/handlebarsModal.hbs', drinkView.drinkObject, function(html){
        $('.modal-body').append(html);
-      //drinkView.loadMakeIt();
-      //console.log(html);
      });
    };
 
@@ -72,9 +70,6 @@
      drinkView.page4();
      ytApi.ytApiCall(drinkString);
    });
-
-  // drinkView.loadMakeIt = function() {
-  // };
 
    drinkView.buttonClick = function() {
      $('.jumbotron').hide();

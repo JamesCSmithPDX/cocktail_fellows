@@ -32,6 +32,11 @@ footer {
   min-height: 30vw;
  }
 
+ .carousel-caption {
+   font-size: 3rem;
+ }
+
+
 .item img {
   max-height: 30vw;
 }
@@ -122,7 +127,11 @@ footer {
   height: 100%;
 }
 
-@media (min-width: 500px) {
+@media (max-width: 500px) {
+  .carousel-inner {
+    width:100%;
+    max-height: 200px !important;
+  }
 
 }
 
@@ -171,7 +180,7 @@ footer {
     height: 50vh;
   }
   .youtubeTitle {
-    display: inline-block;
+    display: block;
     width: 40vw;
   }
 }

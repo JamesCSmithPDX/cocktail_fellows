@@ -19,7 +19,6 @@
         $.get('youtubeitem.html', function(data){
           $('#youtubeResults').append(ytApi.tempRender(data, [{'title':item.snippet.title, 'videoid':item.id.videoId}]));
         });
-        //$('#results').append(item.id.videoId+ ' '+item.snippet.title+'<br>');
       });
     });
   };
