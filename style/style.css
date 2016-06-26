@@ -300,3 +300,11 @@ footer {
     margin: 0 auto;
   }
 }
+#ingredients {
+  text-align: right;
+  margin-right: 2rem;
+}
+#measures {
+  text-align: left;
+  margin-left: 2rem;
+}
